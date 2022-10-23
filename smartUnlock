@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while true
+do
+	if gnome-screensaver-command -q | grep "is active"; then
+		if ssh caedm rm login 2> /dev/null; then
+			gnome-screensaver-command -d
+		fi
+	fi
+	sleep 5;
+done
