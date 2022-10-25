@@ -1,0 +1,9 @@
+#!/bin/bash
+
+gnome-screensaver-command -l
+while ! ssh caedm rm login 2> /dev/null
+do
+	sleep 5;
+done
+gnome-screensaver-command -d
+
